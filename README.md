@@ -1,4 +1,4 @@
-# Morse-Hut
+# [morse-hut](https://alxjnr.github.io/morse-hut/)
 
 A simple web-app for learning morse code. Users are currently able to select a difficulty based on the number of characters they will hear. They will then attempt to guess the characters. 
 <br>
