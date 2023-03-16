@@ -1,38 +1,75 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #eeecd4;
+  color: #a63946;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#morse-chart {
+  width: 300px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.get-code-section {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-evenly;
+  background-color: #839396;
+  /* border-radius: 5px; */
+  width: 70vw;
+  max-width: 700px;
+  padding: 25px;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  margin-bottom: 25px;
+  /* box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.42); */
 }
 
-.App-link {
-  color: #61dafb;
+.play-stop-buttons button {
+  margin-left: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  background: #332934;
+  border: 1px solid #332934;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+button:hover,
+button:active {
+  background-color: #19151a;
+  background-position: 0 0;
+  color: #ffffff;
+}
+
+button:active {
+  opacity: 0.5;
+}
+
+form input {
+  height: 35px;
+  margin-right: 20px;
+}
+form select {
+  height: 35px;
+  margin-right: 20px;
 }
