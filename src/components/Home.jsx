@@ -67,46 +67,53 @@ const Home = () => {
 
   return (
     <section>
-      <section>
-        <img id="morse-chart" src={morseChart} alt="morse" />
-        <section className="get-code-section">
-          <form onSubmit={generateCode}>
-            <select
-              onChange={(event) => {
-                setSelectValue(event.target.value);
-              }}
-            >
-              <option value={1}>1 char</option>
-              <option value={2}>2 chars</option>
-              <option value={3}>3 chars</option>
-              <option value={4}>4 chars</option>
-              <option value={5}>5 chars</option>
-            </select>
-            <button>new code</button>
-          </form>
-          <section className="play-stop-buttons">
-            <button onClick={playAudio}>play</button>
-          </section>
-        </section>
-        {playedError ? <p>audio already played</p> : <p></p>}
-        {!displayAnswer ? (
-          <p></p>
-        ) : isAnswerCorrect ? (
-          <p>correct!</p>
-        ) : (
-          <p>the correct answer was {fact}</p>
-        )}
+      <section className="morse-chart">
+        <img src={morseChart} alt="morse" />
       </section>
       <section>
-        <form onSubmit={handleSubmit}>
-          <input
-            value={input}
-            onChange={(event) => {
-              setInput(event.target.value.toUpperCase());
-            }}
-          ></input>
-          <button>submit</button>
-        </form>
+        <section className="error-section">
+          {playedError ? <p>audio already played</p> : <p></p>}
+          {!displayAnswer ? (
+            <p></p>
+          ) : isAnswerCorrect ? (
+            <p>correct!</p>
+          ) : (
+            <p>the correct answer was {fact}</p>
+          )}
+        </section>
+        <section className="ui-section">
+          <section className="get-code-section">
+            <form onSubmit={generateCode}>
+              <select
+                onChange={(event) => {
+                  setSelectValue(event.target.value);
+                }}
+              >
+                <option value={1}>1 char</option>
+                <option value={2}>2 chars</option>
+                <option value={3}>3 chars</option>
+                <option value={4}>4 chars</option>
+                <option value={5}>5 chars</option>
+              </select>
+              <button>new code</button>
+            </form>
+            <section className="play-stop-buttons">
+              <button onClick={playAudio}>play</button>
+            </section>
+          </section>
+
+          <section>
+            <form onSubmit={handleSubmit}>
+              <input
+                value={input}
+                onChange={(event) => {
+                  setInput(event.target.value.toUpperCase());
+                }}
+              ></input>
+              <button>submit</button>
+            </form>
+          </section>
+        </section>
       </section>
     </section>
   );
