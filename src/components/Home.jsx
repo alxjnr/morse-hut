@@ -13,6 +13,19 @@ const Home = () => {
   const [displayAnswer, setDisplayAnswer] = useState(false);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
 
+  useEffect(() => {
+    axios
+      .get(`https://uselessfacts.jsph.pl/api/v2/facts/random`)
+      .then(({ data }) => {
+        const strFormatted = data.text
+          .replace(/[,!.%()'" ]+/g, "")
+          .toUpperCase();
+        setFact(strFormatted.slice(0, selectValue));
+        const morseAudio = morse.audio(strFormatted.slice(0, selectValue));
+        setAudio(morseAudio);
+      });
+  }, []);
+
   const generateCode = (event) => {
     event.preventDefault();
     setDisplayAnswer(false);

@@ -68,6 +68,7 @@ button:active {
 form input {
   height: 35px;
   margin-right: 20px;
+  text-align: center;
 }
 form select {
   height: 35px;
