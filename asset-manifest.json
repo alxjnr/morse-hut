@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/morse-hut/static/css/main.a0886be4.css",
-    "main.js": "/morse-hut/static/js/main.dc99f502.js",
+    "main.css": "/morse-hut/static/css/main.a709ea56.css",
+    "main.js": "/morse-hut/static/js/main.09a9d933.js",
     "static/js/787.3262f7e3.chunk.js": "/morse-hut/static/js/787.3262f7e3.chunk.js",
-    "static/media/morse.png": "/morse-hut/static/media/morse.ebc6195f3e32c4537afc.png",
-    "static/media/logo.svg": "/morse-hut/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/morse-hut-logo-large.png": "/morse-hut/static/media/morse-hut-logo-large.afb39a77b18d0b8cebbe.png",
+    "static/media/morse.png": "/morse-hut/static/media/morse.d08e26ed070ae8fcfcbb.png",
     "index.html": "/morse-hut/index.html",
-    "main.a0886be4.css.map": "/morse-hut/static/css/main.a0886be4.css.map",
-    "main.dc99f502.js.map": "/morse-hut/static/js/main.dc99f502.js.map",
+    "main.a709ea56.css.map": "/morse-hut/static/css/main.a709ea56.css.map",
+    "main.09a9d933.js.map": "/morse-hut/static/js/main.09a9d933.js.map",
     "787.3262f7e3.chunk.js.map": "/morse-hut/static/js/787.3262f7e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0886be4.css",
-    "static/js/main.dc99f502.js"
+    "static/css/main.a709ea56.css",
+    "static/js/main.09a9d933.js"
   ]
 }
