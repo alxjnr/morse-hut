@@ -1,6 +1,6 @@
 # [morse-hut](https://alxjnr.github.io/morse-hut/)
 
-A simple web-app for learning morse code. Users are currently able to select a difficulty based on the number of characters they will hear. They will then attempt to guess the characters. 
+A simple web-app for learning morse code. Users are currently able to select a difficulty based on the number of characters they will hear. They will then attempt to guess the characters.
 <br>
 <br>
 The majority of this web app has been built using React.
@@ -20,3 +20,5 @@ fungenerators Facts API:
 ozdemirburak's morse-decoder library:
 
 `https://github.com/ozdemirburak/morse-decoder`
+
+logo by Midjourney AI
