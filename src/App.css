@@ -15,7 +15,7 @@ body {
 
 .header-section img {
   position: relative;
-  width: 320px;
+  width: 250px;
 }
 
 .morse-chart {
@@ -26,7 +26,7 @@ body {
 }
 
 .morse-chart img {
-  width: 280px;
+  width: 250px;
 }
 
 .error-section {
@@ -94,6 +94,7 @@ button:hover {
 
 .virtual-keyboard {
   margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .virtual-keyboard-row {
@@ -123,4 +124,10 @@ button:hover {
 
 .virtual-keyboard-row-num button {
   width: 8vw;
+}
+
+.virtual-keyboard-row-space button {
+  margin-top: 5px;
+  width: 30vw;
+  max-width: 150px;
 }
