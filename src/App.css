@@ -91,3 +91,36 @@ button {
 button:hover {
   background-color: #f7fafa;
 }
+
+.virtual-keyboard {
+  margin-top: 25px;
+}
+
+.virtual-keyboard-row {
+  margin: auto;
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.virtual-keyboard-row-num {
+  margin: auto;
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.virtual-keyboard button {
+  margin: 1px;
+  border: solid grey 1px;
+  background-color: #fff2f2;
+  border-radius: 10px;
+  width: 9vw;
+  max-width: 40px;
+}
+
+.virtual-keyboard-row-num button {
+  width: 8vw;
+}

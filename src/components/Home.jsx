@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Tomorse from "../tomorse.js";
+import VirtualKeyboard from "./VirtualKeyboard.jsx";
 const morseChart = require("../images/morse.png");
 
 const Home = () => {
@@ -109,6 +110,7 @@ const Home = () => {
           </section>
         </section>
       </section>
+      <VirtualKeyboard setInput={setInput} />
     </section>
   );
 };
