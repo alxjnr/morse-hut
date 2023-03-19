@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/morse-hut/static/css/main.a709ea56.css",
-    "main.js": "/morse-hut/static/js/main.e2ddf0c2.js",
+    "main.js": "/morse-hut/static/js/main.d6c8c474.js",
     "static/js/787.3262f7e3.chunk.js": "/morse-hut/static/js/787.3262f7e3.chunk.js",
     "static/media/morse-hut-logo-large.png": "/morse-hut/static/media/morse-hut-logo-large.afb39a77b18d0b8cebbe.png",
     "static/media/morse.png": "/morse-hut/static/media/morse.d08e26ed070ae8fcfcbb.png",
     "index.html": "/morse-hut/index.html",
     "main.a709ea56.css.map": "/morse-hut/static/css/main.a709ea56.css.map",
-    "main.e2ddf0c2.js.map": "/morse-hut/static/js/main.e2ddf0c2.js.map",
+    "main.d6c8c474.js.map": "/morse-hut/static/js/main.d6c8c474.js.map",
     "787.3262f7e3.chunk.js.map": "/morse-hut/static/js/787.3262f7e3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a709ea56.css",
-    "static/js/main.e2ddf0c2.js"
+    "static/js/main.d6c8c474.js"
   ]
 }
