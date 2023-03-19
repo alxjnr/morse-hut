@@ -7,18 +7,16 @@ The majority of this web app has been built using React.
 
 ## Known Issues
 
-- Currently, audio can only be played once. It is my current understanding that this is a limitation of the Web Audio API being used to generate the audio oscillator and how it is accesssed
+- Occasionally the audio will drop out or hang, this is fixed with a page refresh and is likely an audio buffering issue.
+
+- The virtual keyboard may not display on all devices correctly, right now it is optional.
 
 ## Sources
 
-This web app uses fungenerators Facts API to get a random fact. This is then translated into the morse code audio that users will hear and try to guess. Ozdemirburak's morse-decoder libary provides a very convenient way to translate strings into audio to be passed into an oscillator.
+This web app uses fungenerators Facts API to get a random fact. This is then translated into the morse code audio that users will hear and try to guess. My own tomorse soon-to-be libary provides a very convenient way to translate strings into audio to be passed into an oscillator.
 
 fungenerators Facts API:
 
 `https://fungenerators.com/api/facts/`
-
-ozdemirburak's morse-decoder library:
-
-`https://github.com/ozdemirburak/morse-decoder`
 
 logo by Midjourney AI
