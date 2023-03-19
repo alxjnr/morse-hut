@@ -103,4 +103,4 @@ class Tomorse {
   }
 }
 
-module.exports = Tomorse;
+export default Tomorse;

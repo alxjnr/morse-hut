@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Tomorse from "../tomorse.js";
 const morseChart = require("../images/morse.png");
-const Tomorse = require("../tomorse.js");
 
 const Home = () => {
   const [fact, setFact] = useState("");
