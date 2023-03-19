@@ -1,13 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-const morse = require("morse-decoder");
 const morseChart = require("../images/morse.png");
+const Tomorse = require("../tomorse.js");
 
 const Home = () => {
   const [fact, setFact] = useState("");
-  const [audio, setAudio] = useState({});
-  const [audioPlayed, setAudioPlayed] = useState(false);
-  const [playedError, setPlayedError] = useState(false);
   const [input, setInput] = useState("");
   const [selectValue, setSelectValue] = useState(1);
   const [displayAnswer, setDisplayAnswer] = useState(false);
@@ -18,19 +15,16 @@ const Home = () => {
       .get(`https://uselessfacts.jsph.pl/api/v2/facts/random`)
       .then(({ data }) => {
         const strFormatted = data.text
-          .replace(/[,!.%()'" ]+/g, "")
+          .replace(/[,!.%()'"]+/g, "")
+          .replace(/ /g, "/")
           .toUpperCase();
         setFact(strFormatted.slice(0, selectValue));
-        const morseAudio = morse.audio(strFormatted.slice(0, selectValue));
-        setAudio(morseAudio);
       });
   }, []);
 
   const generateCode = (event) => {
     event.preventDefault();
     setDisplayAnswer(false);
-    setAudioPlayed(false);
-    setPlayedError(false);
     axios
       .get(`https://uselessfacts.jsph.pl/api/v2/facts/random`)
       .then(({ data }) => {
@@ -38,18 +32,13 @@ const Home = () => {
           .replace(/[,!.%()'"]+/g, "")
           .toUpperCase();
         setFact(strFormatted.slice(0, selectValue));
-        const morseAudio = morse.audio(strFormatted.slice(0, selectValue));
-        setAudio(morseAudio);
       });
   };
 
   const playAudio = () => {
-    if (audioPlayed) {
-      setPlayedError(true);
-    } else {
-      audio.play();
-      setAudioPlayed(true);
-    }
+    setDisplayAnswer(false);
+    const tomorse = new Tomorse();
+    tomorse.play(fact);
   };
 
   const handleSubmit = (event) => {
@@ -61,8 +50,14 @@ const Home = () => {
       setIsAnswerCorrect(false);
     }
     setInput("");
-    setPlayedError(false);
-    setAudioPlayed(false);
+    axios
+      .get(`https://uselessfacts.jsph.pl/api/v2/facts/random`)
+      .then(({ data }) => {
+        const strFormatted = data.text
+          .replace(/[,!.%()'"]+/g, "")
+          .toUpperCase();
+        setFact(strFormatted.slice(0, selectValue));
+      });
   };
 
   return (
@@ -72,7 +67,6 @@ const Home = () => {
       </section>
       <section>
         <section className="error-section">
-          {playedError ? <p>audio already played</p> : <p></p>}
           {!displayAnswer ? (
             <p></p>
           ) : isAnswerCorrect ? (
