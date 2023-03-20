@@ -70,7 +70,6 @@ class Tomorse {
         } else if (char[i] === "-") {
           this.dah();
         } else if (char[i] === "/") {
-          console.log("test");
           this.letterPause();
         }
       }

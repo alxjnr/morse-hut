@@ -10,29 +10,36 @@ const Home = () => {
   const [selectValue, setSelectValue] = useState(1);
   const [displayAnswer, setDisplayAnswer] = useState(false);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(false);
+  const [opacity, setOpacity] = useState(1);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   useEffect(() => {
+    setInput("");
     axios
       .get(`https://uselessfacts.jsph.pl/api/v2/facts/random`)
       .then(({ data }) => {
         const strFormatted = data.text
-          .replace(/[,!.%()'"]+/g, "")
-          .replace(/ /g, "/")
-          .toUpperCase();
-        setFact(strFormatted.slice(0, selectValue));
+          .replace(/[,!.%()'"`-]+/g, "")
+          .toUpperCase()
+          .split(" ")
+          .slice(0, selectValue);
+        setFact(strFormatted.join(" "));
       });
   }, []);
 
   const generateCode = (event) => {
     event.preventDefault();
     setDisplayAnswer(false);
+    setInput("");
     axios
       .get(`https://uselessfacts.jsph.pl/api/v2/facts/random`)
       .then(({ data }) => {
         const strFormatted = data.text
-          .replace(/[,!.%()'"]+/g, "")
-          .toUpperCase();
-        setFact(strFormatted.slice(0, selectValue));
+          .replace(/[,!.%()'"`-]+/g, "")
+          .toUpperCase()
+          .split(" ")
+          .slice(0, selectValue);
+        setFact(strFormatted.join(" "));
       });
   };
 
@@ -43,6 +50,7 @@ const Home = () => {
   };
 
   const handleSubmit = (event) => {
+    setIsFirstLoad(false);
     event.preventDefault();
     setDisplayAnswer(true);
     if (input === fact) {
@@ -51,20 +59,26 @@ const Home = () => {
       setIsAnswerCorrect(false);
     }
     setInput("");
-    axios
-      .get(`https://uselessfacts.jsph.pl/api/v2/facts/random`)
-      .then(({ data }) => {
-        const strFormatted = data.text
-          .replace(/[,!.%()'"]+/g, "")
-          .toUpperCase();
-        setFact(strFormatted.slice(0, selectValue));
-      });
+  };
+
+  const changeOpacity = () => {
+    if (!opacity) {
+      setOpacity(1);
+    } else {
+      setOpacity(0);
+    }
   };
 
   return (
     <section>
       <section className="morse-chart">
-        <img src={morseChart} alt="morse" />
+        <img
+          src={morseChart}
+          alt="morse"
+          style={{ opacity: opacity }}
+          onClick={changeOpacity}
+        />
+        {!isFirstLoad ? <p></p> : <h6>tap the cheat sheet to hide it</h6>}
       </section>
       <section>
         <section className="error-section">
@@ -84,11 +98,9 @@ const Home = () => {
                   setSelectValue(event.target.value);
                 }}
               >
-                <option value={1}>1 char</option>
-                <option value={2}>2 chars</option>
-                <option value={3}>3 chars</option>
-                <option value={4}>4 chars</option>
-                <option value={5}>5 chars</option>
+                <option value={1}>1 word</option>
+                <option value={2}>2 words</option>
+                <option value={3}>3 words</option>
               </select>
               <button>new code</button>
             </form>

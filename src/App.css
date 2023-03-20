@@ -23,6 +23,7 @@ body {
   padding: 15px;
   border-radius: 10px;
   margin: auto;
+  height: 250px;
 }
 
 .morse-chart img {
